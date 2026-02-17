@@ -9,6 +9,27 @@ from demand_model import DemandModel
 # Set page config
 st.set_page_config(page_title="Pricing Strategy & Demand Simulator", layout="wide")
 
+# Custom CSS for dropdown behavior
+st.markdown("""
+<style>
+/* Change cursor to pointer for dropdowns */
+div[data-testid="stSelectbox"] > div > div {
+    cursor: pointer !important;
+}
+
+/* Disable typing in the dropdown input by making it read-only-like and transparent caret */
+div[data-testid="stSelectbox"] input {
+    cursor: pointer !important;
+    caret-color: transparent !important;
+}
+
+/* Ensure the dropdown arrow also shows pointer */
+div[data-testid="stSelectbox"] svg {
+    cursor: pointer !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Paths
 DATA_PATH = r"c:\Users\DELL\OneDrive\Desktop\anti\pricing_dataset.csv"
 MODEL_PATH = r"c:\Users\DELL\OneDrive\Desktop\anti\pricing_model.pkl"
